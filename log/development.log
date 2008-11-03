@@ -44070,3 +44070,33 @@ b2xsZXI6OkZsYXNoOjpGbGFzaEhhc2h7AAY6CkB1c2VkewA=--919e0bb5fa033f1a048c7d6046cfb0
 Rendering template within layouts/application
 Rendering sessions/new
 Completed in 0.00518 (192 reqs/sec) | Rendering: 0.00223 (43%) | DB: 0.00000 (0%) | 200 OK [http://127.0.0.1/session/new]
+
+
+Processing DevicesController#index (for 127.0.0.1 at 2008-11-03 14:08:10) [GET]
+  Session ID: BAh7BzoOcmV0dXJuX3RvMCIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6
+Rmxhc2g6OkZsYXNoSGFzaHsGOgtub3RpY2UiHllvdSBoYXZlIGJlZW4gbG9n
+Z2VkIG91dC4GOgpAdXNlZHsGOwdG--979731c5e654a6ee3b9f65151fe1e452f89dc621
+  Parameters: {"action"=>"index", "controller"=>"devices"}
+Redirected to http://127.0.0.1:3000/session/new
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 0.00095 (1051 reqs/sec) | DB: 0.00000 (0%) | 302 Found [http://127.0.0.1/devices]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2008-11-03 14:08:10) [GET]
+  Session ID: BAh7BzoOcmV0dXJuX3RvIg0vZGV2aWNlcyIKZmxhc2hJQzonQWN0aW9uQ29u
+dHJvbGxlcjo6Rmxhc2g6OkZsYXNoSGFzaHsGOgtub3RpY2UiHllvdSBoYXZl
+IGJlZW4gbG9nZ2VkIG91dC4GOgpAdXNlZHsGOwdU--dec5341b881f0e4ad0361356bcaa1eec6c084806
+  Parameters: {"action"=>"new", "controller"=>"sessions"}
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 0.00849 (117 reqs/sec) | Rendering: 0.00533 (62%) | DB: 0.00000 (0%) | 200 OK [http://127.0.0.1/session/new]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2008-11-03 14:08:23) [GET]
+  Session ID: BAh7CDoMY3NyZl9pZCIlODQzMzEwMTE1OWE4ZDY2NTExMmQwOThlMTk5M2E4
+NDU6DnJldHVybl90byINL2RldmljZXMiCmZsYXNoSUM6J0FjdGlvbkNvbnRy
+b2xsZXI6OkZsYXNoOjpGbGFzaEhhc2h7AAY6CkB1c2VkewA=--8bd3c8ce1c2679813fb1faade05152f8f7fc8584
+  Parameters: {"action"=>"new", "controller"=>"sessions"}
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 0.00579 (172 reqs/sec) | Rendering: 0.00263 (45%) | DB: 0.00000 (0%) | 200 OK [http://127.0.0.1/session/new]
