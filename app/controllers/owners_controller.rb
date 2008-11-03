@@ -1,4 +1,5 @@
 class OwnersController < ApplicationController
+  before_filter :login_required
   # GET /owners
   # GET /owners.xml
   def index

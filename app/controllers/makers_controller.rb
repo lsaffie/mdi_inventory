@@ -1,4 +1,5 @@
 class MakersController < ApplicationController
+  before_filter :login_required
   # GET /makers
   # GET /makers.xml
   def index

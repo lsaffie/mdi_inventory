@@ -12,8 +12,11 @@ padding: 2%;
 background: #FFF; ;
 }
 #menu {
-background: #B7CEC6;
+float: left;
 padding: 1%;
+}
+#loginlink {
+float: right;	
 }
 a {
 text-decoration: none;

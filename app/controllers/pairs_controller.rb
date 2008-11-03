@@ -1,4 +1,5 @@
 class PairsController < ApplicationController
+  before_filter :login_required
   # GET /pairs
   # GET /pairs.xml
   def index

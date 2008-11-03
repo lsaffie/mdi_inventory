@@ -1,4 +1,5 @@
 class TypesController < ApplicationController
+  before_filter :login_required
   # GET /types
   # GET /types.xml
   def index

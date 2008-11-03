@@ -1,4 +1,5 @@
 class DevicesController < ApplicationController
+  before_filter :login_required
   # GET /devices
   # GET /devices.xml
   def index
