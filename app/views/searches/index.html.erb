@@ -1,0 +1,15 @@
+<h1>Listing searches</h1>
+
+<table>
+
+
+<% for search in @searches %>
+  <tr>
+	<td><%= link_to search.label_name, device_path(@search_id, :search => search) %>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New search', new_search_path %>

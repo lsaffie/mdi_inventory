@@ -1,0 +1,14 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: Owner1
+
+two:
+  name: Owner2
+
+three:
+    name: Owner3
+
+four:
+    name: Owner4
+

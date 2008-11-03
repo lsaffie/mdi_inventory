@@ -1,0 +1,23 @@
+<p>
+  <b>Title:</b>
+  <%=h @event.title %>
+</p>
+
+<p>
+  <b>Body:</b>
+  <%=h @event.body %>
+</p>
+
+<p>
+  <b>Created at:</b>
+  <%=h @event.created_at %>
+</p>
+
+<p>
+  <b>Device:</b>
+  <%=h @event.device_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_event_path(@event) %> |
+<%= link_to 'Back', events_path %>

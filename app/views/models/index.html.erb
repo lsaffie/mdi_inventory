@@ -1,0 +1,18 @@
+<h1>Models</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+  </tr>
+
+<% for model in @models %>
+  <tr>
+    <td><%= link_to model.name, model %></td>
+    <td><%= link_to 'Destroy', model, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New model', new_model_path %>

@@ -1,0 +1,74 @@
+<h1>Editing device</h1>
+
+<% form_for(@device) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :label_name %><br />
+    <%= f.text_field :label_name %>
+  </p>
+  <p>
+    <%= f.label :serial_number %><br />
+    <%= f.text_field :serial_number %>
+  </p>
+<p>
+	Maker:<br />
+	<%= select("maker","maker_id", Maker.find(:all, :order => "name").collect {|p| [p.name, p.id]}, { :selected => @device.maker.id }) %>
+</p>
+<p>
+	Maker:<br />
+	<%= select("model","model_id", Model.find(:all, :order => "name").collect {|p| [p.name, p.id]}, { :selected => @device.model.id }) %>
+</p>
+<p>
+	Device Type:<br />
+	<%= select("type","type_id", Type.find(:all, :order => "name").collect {|p| [p.name, p.id]}, { :selected => @device.type.id }) %>
+</p>
+
+<p>
+	Study:<br />
+	<%= select("study","study_id", Study.find(:all, :order => "name").collect {|p| [p.name, p.id]}, { :selected => @device.study.id  }) %>
+</p>
+
+<p>
+	Owner:<br />
+	<%= select("owner","owner_id", Owner.find(:all, :order => "name").collect {|p| [p.name, p.id]}, { :selected => @device.owner.id }) %>
+</p>
+
+  <p>
+    <%= f.label :current_owner %><br />
+    <%= f.text_field :current_owner %>
+  </p>
+  <p>
+    <%= f.label :purchaser %><br />
+    <%= f.text_field :purchaser %>
+  </p>
+  <p>
+    <%= f.label :phone_number %><br />
+    <%= f.text_field :phone_number %>
+  </p>
+  <p>
+    <%= f.label :rate_plan %><br />
+    <%= f.text_field :rate_plan %>
+  </p>
+  <p>
+    <%= f.label :carrier %><br />
+    <%= f.text_field :carrier %>
+  </p>
+  <p>
+    <%= f.label :activation_date %><br />
+    <%= f.datetime_select :activation_date %>
+  </p>
+  <p>
+    <%= f.label :lock_code %><br />
+    <%= f.text_field :lock_code %>
+  </p>
+
+
+
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @device %> |
+<%= link_to 'Back', devices_path %>

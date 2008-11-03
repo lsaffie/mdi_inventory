@@ -1,0 +1,14 @@
+<p>
+  <b>Name:</b>
+  <%=h @maker.name %>
+</p>
+
+<p>
+  <b>Models:</b><br/>
+<% for model in @maker.models %>
+	<%= model.name %><br />
+<% end %>
+
+
+<%= link_to 'Edit', edit_maker_path(@maker) %> |
+<%= link_to 'Back', makers_path %>

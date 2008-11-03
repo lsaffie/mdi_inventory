@@ -1,0 +1,20 @@
+<h1>Listing pairs</h1>
+
+<table>
+  <tr>
+    <th>Device</th>
+  </tr>
+
+<% for pair in @pairs %>
+  <tr>
+    <td><%=h pair.device_id %></td>
+    <td><%#= link_to 'Show', device_pair_path %></td>
+    <td><%#= link_to 'Edit', edit_device_pair_path(pair) %></td>
+    <td><%#= link_to 'Destroy', device_pair, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New pair', new_device_pair_path %>

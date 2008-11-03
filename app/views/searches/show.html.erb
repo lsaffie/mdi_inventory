@@ -1,0 +1,6 @@
+<% for device in @devices %>
+	<%= device.serial_number %><br>
+<% end %>
+
+<%= link_to 'Edit', edit_search_path(@search) %> |
+<%= link_to 'Back', searches_path %>

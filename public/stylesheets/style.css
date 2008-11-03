@@ -1,0 +1,30 @@
+body {
+background: #8A9494;
+margin-left: auto;
+margin-right: auto;
+font: 13pt Helvetica;
+color: #3C4742;
+}
+#content {
+border: 10px solid #B7CEC6;
+margin: 2% 10%;
+padding: 2%;
+background: #FFF; ;
+}
+#menu {
+background: #B7CEC6;
+padding: 1%;
+}
+a {
+text-decoration: none;
+}
+#odd {
+padding: 10px;
+border: 1px solid #B7CEC6;
+margin: 1px;
+}
+#even {
+padding: 10px;
+border: 1px solid #B7CEC6;
+margin: 1px;
+}

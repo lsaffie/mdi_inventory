@@ -1,0 +1,19 @@
+<h1>New pair</h1>
+
+<% form_for(@pair) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :device1_id %><br />
+    <%= f.text_field :device1_id %>
+  </p>
+  <p>
+    <%= f.label :device2_id %><br />
+    <%= f.text_field :device2_id %>
+  </p>
+  <p>
+    <%= f.submit "Create" %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', pairs_path %>

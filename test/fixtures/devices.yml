@@ -1,0 +1,31 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  label_name: MyString1
+  serial_number: MyString1
+  current_owner: MyString
+  purchaser: MyString
+  phone_number: MyString
+  rate_plan: MyString
+  carrier: MyString
+  activation_date: 2008-10-28 16:18:03
+  lock_code: MyString
+  study_id: 1
+  type_id: 1
+  maker_id: 1
+  user_id: 1
+
+two:
+  label_name: MyString2
+  serial_number: MyString2
+  current_owner: MyString
+  purchaser: MyString
+  phone_number: MyString
+  rate_plan: MyString
+  carrier: MyString
+  activation_date: 2008-10-28 16:18:03
+  lock_code: MyString
+  study_id: 1
+  type_id: 1
+  maker_id: 1
+  user_id: 1
