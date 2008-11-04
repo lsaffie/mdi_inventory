@@ -35,16 +35,21 @@
 </p>
 
   <p>
-    <%= f.label :current_owner %><br />
-    <%= f.text_field :current_owner %>
-  </p>
-  <p>
     <%= f.label :purchaser %><br />
     <%= f.text_field :purchaser %>
   </p>
   <p>
     <%= f.label :phone_number %><br />
     <%= f.text_field :phone_number %>
+  </p>
+  <p>
+    <%= f.label :activated %>?<br />
+    <%= f.radio_button :activated, true %> Yes <br />
+	<%= f.radio_button :activated, false %> No
+  </p>
+  <p>
+    Bluetooth ID<br />
+    <%= f.text_field :bluetooth_id %>
   </p>
   <p>
     <%= f.label :rate_plan %><br />

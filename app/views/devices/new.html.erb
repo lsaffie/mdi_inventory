@@ -35,16 +35,21 @@
 </p>
 
   <p>
-    <%= f.label :current_owner %><br />
-    <%= f.text_field :current_owner %>
-  </p>
-  <p>
     <%= f.label :purchaser %><br />
     <%= f.text_field :purchaser %>
   </p>
   <p>
     <%= f.label :phone_number %><br />
     <%= f.text_field :phone_number %>
+  </p>
+  <p>
+    <%= f.label :activated %>?<br />
+    <%= f.radio_button :activated, true %> Yes <br />
+	<%= f.radio_button :activated, false %> No
+  </p>
+  <p>
+    Bluetooth ID<br />
+    <%= f.text_field :bluetooth_id %>
   </p>
   <p>
     <%= f.label :rate_plan %><br />
@@ -61,22 +66,6 @@
   <p>
     <%= f.label :lock_code %><br />
     <%= f.text_field :lock_code %>
-  </p>
-  <p>
-    <%= f.label :study_id %><br />
-    <%= f.text_field :study_id %>
-  </p>
-  <p>
-    <%= f.label :type_id %><br />
-    <%= f.text_field :type_id %>
-  </p>
-  <p>
-    <%= f.label :maker_id %><br />
-    <%= f.text_field :maker_id %>
-  </p>
-  <p>
-    <%= f.label :owner_id %><br />
-    <%= f.text_field :owner_id %>
   </p>
   <p>
     <%= f.submit "Create" %>

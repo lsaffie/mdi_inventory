@@ -1,29 +1,35 @@
 <h1>Devices</h1>
 
 
-    Label name
-    Serial number
-    Current owner
-    Purchaser
-    Phone number
-    Carrier
-    Activation date
+<table>
+	<tr>
+	    <th>Label name</th>
+	    <th>Serial number</th>
+		<th>Maker</th>
+		<th>Model</th>
+	    <th>Purchaser</th>
+	    <th>Phone number</th>
+	   <th>Carrier</th>
+	   <th>Activation date</th>
+	</tr>
 
 <% for device in @devices %>
+<tr>
 
-<div id="<%= cycle('odd','even') %>">
-    <%= link_to device.label_name, device %>
-	<%=h device.serial_number %>
-	<%=h device.maker.name %>
-	<%=h device.model.name %>
-    <%=h device.current_owner %>
-    <%=h device.purchaser %>
-    <%=h device.phone_number %>
-    <%=h device.carrier %>
-    <%=h device.activation_date.strftime("%m/%d/%Y") %>
-    <%= link_to 'Destroy', device, :confirm => 'Are you sure?', :method => :delete %>
-</div>
+<!-- <div id="<%= cycle('odd','even') %>"> -->
+    <td><%= link_to device.label_name, device %></td>
+	<td><%=h device.serial_number %></td>
+	<td><%=h device.maker.name %></td>
+	<td><%=h device.model.name %></td>
+    <td><%=h device.purchaser %></td>
+    <td><%=h device.phone_number %></td>
+    <td><%=h device.carrier %></td>
+    <td><%=h device.activation_date.strftime("%m/%d/%Y") %></td>
+    <td><%= link_to 'Destroy', device, :confirm => 'Are you sure?', :method => :delete %></td>
+<!-- </div> -->
+</tr>
 <% end %>
+</table>
 
 <br />
 

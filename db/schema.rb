@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20081103183054) do
+ActiveRecord::Schema.define(:version => 20081104142444) do
 
   create_table "devices", :force => true do |t|
     t.string   "label_name"
@@ -28,6 +28,8 @@ ActiveRecord::Schema.define(:version => 20081103183054) do
     t.integer  "model_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "bluetooth_id"
+    t.boolean  "activated"
   end
 
   create_table "devices_pairs", :force => true do |t|

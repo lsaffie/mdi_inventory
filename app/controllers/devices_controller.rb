@@ -76,7 +76,6 @@ class DevicesController < ApplicationController
     end
     
     @device.maker = Maker.find(params[:maker]['maker_id'])
-    @device.maker.models[0] = Model.find(params[:model]['model_id'])
     @device.type = Type.find(params[:type]['type_id'])
     @device.study = Study.find(params[:study]['study_id'])
     @device.owner = Owner.find(params[:owner]['owner_id'])
