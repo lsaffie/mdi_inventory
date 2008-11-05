@@ -46718,3 +46718,60 @@ Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA==--80f55ee80bb2eac9029a5ff598224218bf8349
 Rendering template within layouts/application
 Rendering sessions/new
 Completed in 0.00580 (172 reqs/sec) | Rendering: 0.00243 (41%) | DB: 0.00000 (0%) | 200 OK [http://127.0.0.1/session/new]
+
+
+Processing DevicesController#index (for 127.0.0.1 at 2008-11-05 08:32:02) [GET]
+  Session ID: 3ed78536889f6f6a18f6df7947b6e624
+  Parameters: {"action"=>"index", "controller"=>"devices"}
+Redirected to http://127.0.0.1:3000/session/new
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 0.00091 (1095 reqs/sec) | DB: 0.00000 (0%) | 302 Found [http://127.0.0.1/]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2008-11-05 08:32:02) [GET]
+  Session ID: BAh7BzoOcmV0dXJuX3RvIgYvIgpmbGFzaElDOidBY3Rpb25Db250cm9sbGVy
+OjpGbGFzaDo6Rmxhc2hIYXNoewAGOgpAdXNlZHsA--9c196f2aecbec89fc4059df8ee66ed88094fa82a
+  Parameters: {"action"=>"new", "controller"=>"sessions"}
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 0.00827 (120 reqs/sec) | Rendering: 0.00512 (61%) | DB: 0.00000 (0%) | 200 OK [http://127.0.0.1/session/new]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2008-11-05 08:32:23) [GET]
+  Session ID: BAh7CDoMY3NyZl9pZCIlNWU5YmQwMDEyMTYzMjMwOWExOTUyYmY2MTM3NDJi
+MjA6DnJldHVybl90byIGLyIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6
+Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA==--80f55ee80bb2eac9029a5ff598224218bf834975
+  Parameters: {"action"=>"new", "controller"=>"sessions"}
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 0.00559 (178 reqs/sec) | Rendering: 0.00222 (39%) | DB: 0.00000 (0%) | 200 OK [http://127.0.0.1/session/new]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2008-11-05 08:39:33) [GET]
+  Session ID: BAh7CDoMY3NyZl9pZCIlNWU5YmQwMDEyMTYzMjMwOWExOTUyYmY2MTM3NDJi
+MjA6DnJldHVybl90byIGLyIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6
+Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA==--80f55ee80bb2eac9029a5ff598224218bf834975
+  Parameters: {"action"=>"new", "controller"=>"sessions"}
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 0.00701 (142 reqs/sec) | Rendering: 0.00389 (55%) | DB: 0.00000 (0%) | 200 OK [http://127.0.0.1/session/new]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2008-11-05 08:43:18) [GET]
+  Session ID: BAh7CDoMY3NyZl9pZCIlNWU5YmQwMDEyMTYzMjMwOWExOTUyYmY2MTM3NDJi
+MjA6DnJldHVybl90byIGLyIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6
+Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA==--80f55ee80bb2eac9029a5ff598224218bf834975
+  Parameters: {"action"=>"new", "controller"=>"sessions"}
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 0.00709 (141 reqs/sec) | Rendering: 0.00400 (56%) | DB: 0.00000 (0%) | 200 OK [http://127.0.0.1/session/new]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2008-11-05 08:44:41) [GET]
+  Session ID: BAh7CDoMY3NyZl9pZCIlNWU5YmQwMDEyMTYzMjMwOWExOTUyYmY2MTM3NDJi
+MjA6DnJldHVybl90byIGLyIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6
+Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA==--80f55ee80bb2eac9029a5ff598224218bf834975
+  Parameters: {"action"=>"new", "controller"=>"sessions"}
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 0.00589 (169 reqs/sec) | Rendering: 0.00236 (40%) | DB: 0.00000 (0%) | 200 OK [http://127.0.0.1/session/new]
