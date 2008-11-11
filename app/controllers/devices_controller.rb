@@ -75,6 +75,24 @@ class DevicesController < ApplicationController
       @device.events << event
     end
     
+    new_study = Study.find(params[:study]['study_id'])
+    if @device.study != new_study
+      event = Event.create(:title => 'Study change', :body => "The study has changed from #{@device.study.name} to #{new_study.name}")
+      @device.events << event
+    end
+    
+    if @device.activated != params[:device]['activated']
+      event = Event.create(:title => 'activation change', :body => "The activation has changed from #{@device.activated?} to #{params[:device]['activated']}")
+      @device.events << event
+    end
+    
+    dt = DateTime.new(params[:device]['activation_date(1i)'].to_i,params[:device]['activation_date(2i)'].to_i,params[:device]['activation_date(3i)'].to_i,params[:device]['activation_date(4i)'].to_i,params[:device]['activation_date(5i)'].to_i)
+    if @device.activation_date != dt
+      event = Event.create(:title => 'activation date change', :body => "The activation date has changed from #{@device.activation_date} to #{dt}")
+      @device.events << event
+    end  
+    ###############
+        
     @device.maker = Maker.find(params[:maker]['maker_id'])
     @device.type = Type.find(params[:type]['type_id'])
     @device.study = Study.find(params[:study]['study_id'])

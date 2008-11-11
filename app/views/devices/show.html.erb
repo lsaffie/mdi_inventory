@@ -87,33 +87,38 @@
 	<%= link_to Device.find(p_id).label_name, device_path(p_id) %>
 	<%= Device.find(p_id).maker.name %>
 	<%= pair.created_at.strftime("%m/%d/%Y") %>
-	<%= link_to 'Destroy', pair, :confirm => 'Are you sure?', :method => :delete %><br />
+	<%= link_to 'Destroy', device_pair_path(@device,pair), :confirm => 'Are you sure?', :method => :delete %><br />
 <% end %>
 
-<h1>Create new pair</h1>
-<% form_for :pair, @pair, :url => device_pair_path(@device,@pair) do |f| %>
-<% if @search %>
-	<%= select("pair","device_pair_id", Device.find(:all, :order => "label_name").collect {|p| [p.label_name, p.id]}, { :selected => @search.to_i }) %>
-<% else %>
-	<%= select("pair","device_pair_id", Device.find(:all, :order => "label_name").collect {|p| [p.label_name, p.id]}, { }) %>
-<% end %>
-	<%= f.submit 'Create pair!' %>
-	<%= link_to 'find_device', :controller => "searches", :action => "new", :device => @device %>
-<% end %>
+<p>
+	<% form_for :pair, @pair, :url => device_pair_path(@device,@pair) do |f| %>
+	<% if @search %>
+		<%= select("pair","device_pair_id", Device.find(:all, :order => "label_name").collect {|p| [p.label_name, p.id]}, { :selected => @search.to_i }) %>
+	<% else %>
+		<%= select("pair","device_pair_id", Device.find(:all, :order => "label_name").collect {|p| [p.label_name, p.id]}, { }) %>
+	<% end %>
+		<%= f.submit 'Create pair!' %>
+		<%= link_to 'find_device', :controller => "searches", :action => "new", :device => @device %>
+	<% end %>
+</p>
 
-<h1>Events</h1>
-<% for event in @device.events %>
-	<%= link_to event.title, event %>
-	<%= event.created_at.strftime("%m/%d/%Y") %><br>
-<% end %>
+<p>
+	<h1>Events</h1>
+	<% for event in @device.events %>
+		<%= link_to event.title, event %>
+		<%= event.created_at.strftime("%m/%d/%Y") %><br>
+	<% end %>
+</p>
 
-<% form_for :event, @event, :url => device_event_path(@device,@event) do |f| %>
-	Title:<br>
-	<%= f.text_field :title %><br>
-	Body:<br>
-	<%= f.text_area :body %>
-	<br>
-	<%= f.submit 'Create' %>
-<% end %>
+<p>
+	<% form_for :event, @event, :url => device_event_path(@device,@event) do |f| %>
+		Title:<br>
+		<%= f.text_field :title %><br>
+		Body:<br>
+		<%= f.text_area :body, :rows => 4 %>
+		<br>
+		<%= f.submit 'Create' %>
+	<% end %>
+</p>
 
 

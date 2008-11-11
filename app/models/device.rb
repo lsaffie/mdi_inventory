@@ -9,4 +9,9 @@ class Device < ActiveRecord::Base
   
   has_and_belongs_to_many :pairs
   
+  def create_tickets() 
+
+  
+  end
+  
 end

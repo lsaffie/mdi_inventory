@@ -42,8 +42,13 @@ class PairsController < ApplicationController
   # POST /pairs.xml
   def create 
     @device = Device.find(params[:device_id])
-    #@device2 = Device.find(params[:pair]['device_pair_id'])
     @pair = Pair.new(:device1_id => params[:pair]['device_pair_id'], :device2_id => params[:device_id])
+    
+    ## Create Ticket ##
+      event = Event.create(:title => 'Pair Created', :body => "Pair created #{Device.find(@pair.device1_id).label_name}
+                  and #{Device.find(@pair.device2_id).label_name}")
+      @device.events << event
+    ####
 
     respond_to do |format|
       if @pair.save
@@ -78,6 +83,14 @@ class PairsController < ApplicationController
   # DELETE /pairs/1.xml
   def destroy
     @pair = Pair.find(params[:id])
+    device = Device.find(params[:device_id])
+    
+    ## Create Ticket ##
+      event = Event.create(:title => 'Pair deleted', :body => "Pair deleted #{Device.find(@pair.device1_id).label_name}
+              and #{Device.find(@pair.device2_id).label_name}")
+      device.events << event
+    ####
+    
     @pair.destroy
 
     respond_to do |format|
