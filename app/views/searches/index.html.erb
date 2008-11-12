@@ -1,11 +1,13 @@
 <h1>Listing searches</h1>
 
 <table>
-
+	<tr><td colspan=3 class="table_header">Search Results </td></tr>
 
 <% for search in @searches %>
   <tr>
-	<td><%= link_to search.label_name, device_path(@search_id, :search => search) %>
+	<td><%= search.label_name %></td>
+	<td><%= link_to 'view device', device_path(search), :class => 'search_links' %></td>
+	<td><%= link_to "pair it", device_path(@search_id, :search => search), :class => 'search_links' %> </td>
   </tr>
 <% end %>
 </table>

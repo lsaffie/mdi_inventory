@@ -2,11 +2,17 @@
 
 <% form_tag searches_path, :method => 'get' do  %>
 	<%= hidden_field_tag 'device_id', @device_id %>
-	Label Name: <%= text_field_tag :labelname %><br>
+	Label Name: <%= text_field_tag :labelname %>
+    <%= submit_tag "Find by Label" %>
+<% end %>
+
+<p>
+<% form_tag searches_path, :method => 'get' do  %>
+	<%= hidden_field_tag 'device_id', @device_id %>
 	Maker: <%= select("maker","maker_id", Maker.find(:all, :order => "name").collect {|p| [p.name, p.id]}, {  }) %><br>
 	Model: <%= select("model","model_id", Model.find(:all, :order => "name").collect {|p| [p.name, p.id]}, {  }) %><br>
     <%= submit_tag "Find" %>
 <% end %>
-
+</p>
 
 <%= link_to 'Back', searches_path %>

@@ -3,7 +3,11 @@ class SearchesController < ApplicationController
   # GET /searches
   # GET /searches.xml
   def index
-    @searches = Search.search(params[:labelname],params[:model]['model_id'],params[:maker]['maker_id'])
+    if params[:labelname]
+      @searches = Search.search_label(params[:labelname])
+    else
+      @searches = Search.search(params[:model]['model_id'],params[:maker]['maker_id'])
+    end
     @search_id = params[:device_id]
 
     respond_to do |format|

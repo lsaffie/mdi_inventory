@@ -3,15 +3,16 @@
 
 <table>
 	<tr>
-	    <th>Label name</th>
-	    <th>Serial number</th>
-		<th>Maker</th>
-		<th>Model</th>
-	    <th>Purchaser</th>
-	    <th>Phone number</th>
-	   <th>Carrier</th>
-	   <th>Activation date</th>
+	    <td class="table_header">Label name</td>
+	    <td class="table_header">Serial number</td>
+		<td class="table_header">Maker</td>
+		<td class="table_header">Model</td>
+	    <td class="table_header">Purchaser</td>
+	    <td class="table_header">Phone number</td>
+	   <td class="table_header">Carrier</td>
+	   <td colspan="2" class="table_header">Activation date</td>
 	</tr>
+	
 
 <% for device in @devices %>
 <tr>

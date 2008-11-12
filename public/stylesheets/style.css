@@ -39,3 +39,29 @@ margin: 1px;
 .clear {
 clear: both;
 }
+.search_links {	
+text-decoration: underline;
+}
+table{
+width: 580px;
+background-color: #fafafa;
+border: 1px #000000 solid;
+border-collapse: collapse;
+border-spacing: 0px; 
+}
+
+.table_header{
+background: #99CCCC;
+}
+td {
+border-bottom: 1px #6699CC dotted;
+text-align: left;
+font-family: Verdana, sans-serif, Arial;
+font-weight: normal;
+font-size: .7em;
+color: #404040;
+background-color: #fafafa;
+padding-top: 4px;
+padding-bottom: 4px;
+padding-left: 8px;
+padding-right: 0px;
