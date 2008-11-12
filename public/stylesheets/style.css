@@ -43,13 +43,13 @@ clear: both;
 text-decoration: underline;
 }
 table{
-width: 580px;
+font: 13pt Helvetica;
+width: 100%;
 background-color: #fafafa;
 border: 1px #000000 solid;
 border-collapse: collapse;
 border-spacing: 0px; 
 }
-
 .table_header{
 background: #99CCCC;
 }
