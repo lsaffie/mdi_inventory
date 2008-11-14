@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20081104142444) do
+ActiveRecord::Schema.define(:version => 20081114140218) do
 
   create_table "devices", :force => true do |t|
     t.string   "label_name"
@@ -32,6 +32,11 @@ ActiveRecord::Schema.define(:version => 20081104142444) do
     t.boolean  "activated"
   end
 
+  create_table "devices_events", :force => true do |t|
+    t.integer "device_id"
+    t.integer "event_id"
+  end
+
   create_table "devices_pairs", :force => true do |t|
     t.integer "device_id"
     t.integer "pair_id"
@@ -41,7 +46,6 @@ ActiveRecord::Schema.define(:version => 20081104142444) do
     t.string   "title"
     t.string   "body"
     t.datetime "created_at"
-    t.integer  "device_id"
     t.datetime "updated_at"
   end
 

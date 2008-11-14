@@ -3,7 +3,7 @@ class DevicesController < ApplicationController
   # GET /devices
   # GET /devices.xml
   def index
-    @devices = Device.find(:all)
+    @devices = Device.find(:all, :order => :label_name)
 
     respond_to do |format|
       format.html # index.html.erb

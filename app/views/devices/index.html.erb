@@ -7,9 +7,7 @@
 	    <td class="table_header">Serial number</td>
 		<td class="table_header">Maker</td>
 		<td class="table_header">Model</td>
-	    <td class="table_header">Purchaser</td>
-	    <td class="table_header">Phone number</td>
-	   <td class="table_header">Carrier</td>
+	    <td class="table_header">Owner</td>
 	   <td colspan="2" class="table_header">Activation date</td>
 	</tr>
 	
@@ -22,9 +20,7 @@
 	<td><%=h device.serial_number %></td>
 	<td><%=h device.maker.name %></td>
 	<td><%=h device.model.name %></td>
-    <td><%=h device.purchaser %></td>
-    <td><%=h device.phone_number %></td>
-    <td><%=h device.carrier %></td>
+    <td><%=h device.owner.name %></td>
     <td><%=h device.activation_date.strftime("%m/%d/%Y") %></td>
     <td><%= link_to 'Destroy', device, :confirm => 'Are you sure?', :method => :delete %></td>
 <!-- </div> -->

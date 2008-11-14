@@ -6,6 +6,18 @@
     <%= submit_tag "Find by Label" %>
 <% end %>
 
+<% form_tag searches_path, :method => 'get' do  %>
+	<%= hidden_field_tag 'device_id', @device_id %>
+	Serial Number: <%= text_field_tag :serial_number %>
+    <%= submit_tag "Find by Serial Number" %>
+<% end %>
+
+<% form_tag searches_path, :method => 'get' do  %>
+	<%= hidden_field_tag 'device_id', @device_id %>
+	Phone Number: <%= text_field_tag :phone_number %>
+    <%= submit_tag "Find by Phone Number" %>
+<% end %>
+
 <p>
 <% form_tag searches_path, :method => 'get' do  %>
 	<%= hidden_field_tag 'device_id', @device_id %>

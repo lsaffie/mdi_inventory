@@ -5,13 +5,10 @@ class Device < ActiveRecord::Base
   belongs_to :study
   belongs_to :type
   
-  has_many :events
+  # has_many :events
   
   has_and_belongs_to_many :pairs
+  has_and_belongs_to_many :events
   
-  def create_tickets() 
-
-  
-  end
   
 end

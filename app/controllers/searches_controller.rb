@@ -5,6 +5,10 @@ class SearchesController < ApplicationController
   def index
     if params[:labelname]
       @searches = Search.search_label(params[:labelname])
+    elsif params[:serial_number]
+      @searches = Search.search_serial(params[:serial_number])
+    elsif params[:phone_number]
+      @searches = Search.search_phone(params[:phone_number])
     else
       @searches = Search.search(params[:model]['model_id'],params[:maker]['maker_id'])
     end

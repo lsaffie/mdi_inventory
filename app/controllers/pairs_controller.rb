@@ -41,13 +41,19 @@ class PairsController < ApplicationController
   # POST /pairs
   # POST /pairs.xml
   def create 
+    require 'ruby-debug'
+    debugger
     @device = Device.find(params[:device_id])
+    @device_2 = Device.find(params[:pair]['device_pair_id'])
     @pair = Pair.new(:device1_id => params[:pair]['device_pair_id'], :device2_id => params[:device_id])
     
     ## Create Ticket ##
       event = Event.create(:title => 'Pair Created', :body => "Pair created #{Device.find(@pair.device1_id).label_name}
                   and #{Device.find(@pair.device2_id).label_name}")
+      event2 = Event.create(:title => 'Pair Created', :body => "Pair created #{Device.find(@pair.device1_id).label_name}
+                  and #{Device.find(@pair.device2_id).label_name}")
       @device.events << event
+      @device_2.events << event2
     ####
 
     respond_to do |format|
@@ -83,12 +89,22 @@ class PairsController < ApplicationController
   # DELETE /pairs/1.xml
   def destroy
     @pair = Pair.find(params[:id])
-    device = Device.find(params[:device_id])
+    device1 = Device.find(@pair.device1_id)
+    device2 = Device.find(@pair.device2_id)
+    
+    #device = Device.find(params[:device_id])
+    
+    
     
     ## Create Ticket ##
-      event = Event.create(:title => 'Pair deleted', :body => "Pair deleted #{Device.find(@pair.device1_id).label_name}
-              and #{Device.find(@pair.device2_id).label_name}")
-      device.events << event
+      # event = Event.create(:title => 'Pair deleted', :body => "Pair deleted #{Device.find(@pair.device1_id).label_name}
+              # and #{Device.find(@pair.device2_id).label_name}")
+      event1 = Event.create(:title => 'Pair deleted', :body => "Pair deleted #{device1.label_name}
+              and #{device2.label_name}")
+      event2 = Event.create(:title => 'Pair deleted', :body => "Pair deleted #{device1.label_name}
+              and #{device2.label_name}")
+      device1.events << event1
+      device2.events << event2
     ####
     
     @pair.destroy
