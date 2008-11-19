@@ -1,4 +1,10 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :rate_plans
+
+  map.resources :carriers
+
+  map.resources :purchasers
+
   map.resources :users
 
   map.resource :session

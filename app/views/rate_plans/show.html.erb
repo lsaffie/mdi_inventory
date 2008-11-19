@@ -1,0 +1,13 @@
+<p>
+  <b>Name:</b>
+  <%=h @rate_plan.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%=h @rate_plan.description %>
+</p>
+
+
+<%= link_to 'Edit', edit_rate_plan_path(@rate_plan) %> |
+<%= link_to 'Back', rate_plans_path %>

@@ -16,7 +16,7 @@
 	<%= select("maker","maker_id", Maker.find(:all, :order => "name").collect {|p| [p.name, p.id]}, { :selected => @device.maker.id }) %>
 </p>
 <p>
-	Maker:<br />
+	Model:<br />
 	<%= select("model","model_id", Model.find(:all, :order => "name").collect {|p| [p.name, p.id]}, { :selected => @device.model.id }) %>
 </p>
 <p>
@@ -35,8 +35,8 @@
 </p>
 
   <p>
-    <%= f.label :purchaser %><br />
-    <%= f.text_field :purchaser %>
+	Purchaser:<br />
+	<%= select("purchaser","purchaser_id", Purchaser.find(:all, :order => "name").collect {|p| [p.name, p.id]}, { :selected => @device.purchaser.id }) %>
   </p>
   <p>
     <%= f.label :phone_number %><br />
@@ -52,12 +52,12 @@
     <%= f.text_field :bluetooth_id %>
   </p>
   <p>
-    <%= f.label :rate_plan %><br />
-    <%= f.text_field :rate_plan %>
+	Rate Plan:<br />
+	<%= select("rate_plan","rate_plan_id", RatePlan.find(:all, :order => "name").collect {|p| [p.name, p.id]}, { :selected => @device.rate_plan.id }) %>
   </p>
   <p>
-    <%= f.label :carrier %><br />
-    <%= f.text_field :carrier %>
+	Carrier:<br />
+	<%= select("carrier","carrier_id", Carrier.find(:all, :order => "name").collect {|p| [p.name, p.id]}, { :selected => @device.carrier.id }) %>
   </p>
   <p>
     <%= f.label :activation_date %><br />

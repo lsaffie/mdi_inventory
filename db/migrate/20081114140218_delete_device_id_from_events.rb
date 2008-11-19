@@ -4,6 +4,6 @@ class DeleteDeviceIdFromEvents < ActiveRecord::Migration
   end
 
   def self.down
-    add_column "events", "device_id"
+    add_column :events, :device_id, :integer
   end
 end

@@ -50,6 +50,9 @@ class DevicesController < ApplicationController
     @device.type = Type.find(params[:type]['type_id'])
     @device.study = Study.find(params[:study]['study_id'])
     @device.owner = Owner.find(params[:owner]['owner_id'])
+    @device.purchaser = Purchaser.find(params[:purchaser]['purchaser_id'])
+    @device.carrier = Carrier.find(params[:carrier]['carrier_id'])
+    @device.rate_plan = RatePlan.find(params[:rate_plan]['rate_plan_id'])
 
     respond_to do |format|
       if @device.save
@@ -91,12 +94,33 @@ class DevicesController < ApplicationController
       event = Event.create(:title => 'activation date change', :body => "The activation date has changed from #{@device.activation_date} to #{dt}")
       @device.events << event
     end  
+    
+    new_purchaser = Purchaser.find(params[:purchaser]['purchaser_id'])
+    if @device.purchaser != new_purchaser
+      event = Event.create(:title => 'Purchaser change', :body => "The purchaser has changed from #{@device.purchaser.name} to #{new_purchaser.name}")
+      @device.events << event
+    end
+    
+    new_carrier = Carrier.find(params[:carrier]['carrier_id'])
+    if @device.carrier != new_carrier
+      event = Event.create(:title => 'Carrier change', :body => "The carrier has changed from #{@device.carrier.name} to #{new_carrier.name}")
+      @device.events << event
+    end
+    
+    new_rate_plan = RatePlan.find(params[:rate_plan]['rate_plan_id'])
+    if @device.carrier != new_carrier
+      event = Event.create(:title => 'Rate plan change', :body => "The rate plan has changed from #{@device.rate_plan.name} to #{new_rate_plan.name}")
+      @device.events << event
+    end
     ###############
         
     @device.maker = Maker.find(params[:maker]['maker_id'])
     @device.type = Type.find(params[:type]['type_id'])
     @device.study = Study.find(params[:study]['study_id'])
-    @device.owner = Owner.find(params[:owner]['owner_id'])
+    @device.owner = new_owner
+    @device.purchaser = new_purchaser
+    @device.carrier = new_carrier
+    @device.rate_plan = new_rate_plan
 
     respond_to do |format|
       if @device.update_attributes(params[:device])

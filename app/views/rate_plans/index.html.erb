@@ -1,0 +1,22 @@
+<h1>Listing rate_plans</h1>
+
+<table>
+  <tr>
+    <td colspan="1" class="table_header">Name</td>
+    <td colspan="4" class="table_header">Description</td>
+  </tr>
+
+<% for rate_plan in @rate_plans %>
+  <tr>
+    <td><%=h rate_plan.name %></td>
+    <td><%=h rate_plan.description %></td>
+    <td><%= link_to 'Show', rate_plan %></td>
+    <td><%= link_to 'Edit', edit_rate_plan_path(rate_plan) %></td>
+    <td><%= link_to 'Destroy', rate_plan, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New rate_plan', new_rate_plan_path %>

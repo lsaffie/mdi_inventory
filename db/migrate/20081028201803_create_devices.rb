@@ -4,10 +4,7 @@ class CreateDevices < ActiveRecord::Migration
       t.string :label_name
       t.string :serial_number
       t.string :current_owner
-      t.string :purchaser
       t.string :phone_number
-      t.string :rate_plan
-      t.string :carrier
       t.datetime :activation_date
       t.string :lock_code
       t.integer :study_id
@@ -15,6 +12,9 @@ class CreateDevices < ActiveRecord::Migration
       t.integer :maker_id
       t.integer :owner_id
       t.integer :model_id
+      t.integer :purchaser_id
+      t.integer :carrier_id
+      t.integer :rate_plan_id
 
       t.timestamps
     end

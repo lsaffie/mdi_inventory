@@ -9,16 +9,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20081114140218) do
+ActiveRecord::Schema.define(:version => 20081119154540) do
+
+  create_table "carriers", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "devices", :force => true do |t|
     t.string   "label_name"
     t.string   "serial_number"
     t.string   "current_owner"
-    t.string   "purchaser"
     t.string   "phone_number"
-    t.string   "rate_plan"
-    t.string   "carrier"
     t.datetime "activation_date"
     t.string   "lock_code"
     t.integer  "study_id"
@@ -26,6 +29,9 @@ ActiveRecord::Schema.define(:version => 20081114140218) do
     t.integer  "maker_id"
     t.integer  "owner_id"
     t.integer  "model_id"
+    t.integer  "purchaser_id"
+    t.integer  "carrier_id"
+    t.integer  "rate_plan_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "bluetooth_id"
@@ -70,6 +76,19 @@ ActiveRecord::Schema.define(:version => 20081114140218) do
   create_table "pairs", :force => true do |t|
     t.integer  "device1_id"
     t.integer  "device2_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "purchasers", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "rate_plans", :force => true do |t|
+    t.string   "name"
+    t.string   "description"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

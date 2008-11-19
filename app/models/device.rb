@@ -4,6 +4,9 @@ class Device < ActiveRecord::Base
   belongs_to :model
   belongs_to :study
   belongs_to :type
+  belongs_to :purchaser
+  belongs_to :carrier
+  belongs_to :rate_plan
   
   # has_many :events
   

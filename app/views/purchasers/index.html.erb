@@ -1,0 +1,20 @@
+<h1>Listing purchasers</h1>
+
+<table>
+  <tr>
+    <td colspan="4" class="table_header">Name</td>
+  </tr>
+
+<% for purchaser in @purchasers %>
+  <tr>
+    <td><%=h purchaser.name %></td>
+    <td><%= link_to 'Show', purchaser %></td>
+    <td><%= link_to 'Edit', edit_purchaser_path(purchaser) %></td>
+    <td><%= link_to 'Destroy', purchaser, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New purchaser', new_purchaser_path %>
