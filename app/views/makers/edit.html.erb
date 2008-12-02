@@ -7,16 +7,6 @@
     <%= f.label :name %><br />
     <%= f.text_field :name %>
   </p>
-<b>Models </b><br>
-<% for model in @maker.models %>
-	<%= model.name %>
-	<%= link_to 'Destroy', model, :confirm => "Are you sure?", :method => :delete %><br>
-<% end %>
-
-<b>Add Model </b>
-<p>
-	<%= select("name","model_id", Model.find(:all, :order => "name").collect {|p| [p.name, p.id]}, { :include_blank => true }) %>
-</p>
   <p>
     <%= f.submit "Update" %>
   </p>

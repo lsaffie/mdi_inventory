@@ -8,10 +8,8 @@
 
 <% for rate_plan in @rate_plans %>
   <tr>
-    <td><%=h rate_plan.name %></td>
+    <td><%= link_to rate_plan.name, rate_plan_path(rate_plan) %></td>
     <td><%=h rate_plan.description %></td>
-    <td><%= link_to 'Show', rate_plan %></td>
-    <td><%= link_to 'Edit', edit_rate_plan_path(rate_plan) %></td>
     <td><%= link_to 'Destroy', rate_plan, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>

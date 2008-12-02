@@ -7,9 +7,7 @@
 
 <% for carrier in @carriers %>
   <tr>
-    <td><%=h carrier.name %></td>
-    <td><%= link_to 'Show', carrier %></td>
-    <td><%= link_to 'Edit', edit_carrier_path(carrier) %></td>
+    <td><%= link_to carrier.name, carrier_path(carrier) %></td>
     <td><%= link_to 'Destroy', carrier, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>

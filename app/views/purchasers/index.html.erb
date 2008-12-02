@@ -7,9 +7,7 @@
 
 <% for purchaser in @purchasers %>
   <tr>
-    <td><%=h purchaser.name %></td>
-    <td><%= link_to 'Show', purchaser %></td>
-    <td><%= link_to 'Edit', edit_purchaser_path(purchaser) %></td>
+    <td><%= link_to purchaser.name, purchaser_path(purchaser) %></td>
     <td><%= link_to 'Destroy', purchaser, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>

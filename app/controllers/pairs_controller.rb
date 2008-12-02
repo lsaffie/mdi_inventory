@@ -49,9 +49,9 @@ class PairsController < ApplicationController
     
     ## Create Ticket ##
       event = Event.create(:title => 'Pair Created', :body => "Pair created #{Device.find(@pair.device1_id).label_name}
-                  and #{Device.find(@pair.device2_id).label_name}")
+                   and #{Device.find(@pair.device2_id).label_name}")
       event2 = Event.create(:title => 'Pair Created', :body => "Pair created #{Device.find(@pair.device1_id).label_name}
-                  and #{Device.find(@pair.device2_id).label_name}")
+                   and #{Device.find(@pair.device2_id).label_name}")
       @device.events << event
       @device_2.events << event2
     ####

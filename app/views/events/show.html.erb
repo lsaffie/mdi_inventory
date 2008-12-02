@@ -10,7 +10,7 @@
 
 <p>
   <b>Created at:</b>
-  <%=h @event.created_at %>
+  <%=h @event.created_at.strftime("%H:%M on %m/%d/%Y") %>
 </p>
 
 

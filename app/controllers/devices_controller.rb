@@ -84,7 +84,7 @@ class DevicesController < ApplicationController
       @device.events << event
     end
     
-    if @device.activated != params[:device]['activated']
+    if @device.activated.to_s != params[:device]['activated']
       event = Event.create(:title => 'activation change', :body => "The activation has changed from #{@device.activated?} to #{params[:device]['activated']}")
       @device.events << event
     end
@@ -108,7 +108,7 @@ class DevicesController < ApplicationController
     end
     
     new_rate_plan = RatePlan.find(params[:rate_plan]['rate_plan_id'])
-    if @device.carrier != new_carrier
+    if @device.rate_plan != new_rate_plan
       event = Event.create(:title => 'Rate plan change', :body => "The rate plan has changed from #{@device.rate_plan.name} to #{new_rate_plan.name}")
       @device.events << event
     end
@@ -117,10 +117,12 @@ class DevicesController < ApplicationController
     @device.maker = Maker.find(params[:maker]['maker_id'])
     @device.type = Type.find(params[:type]['type_id'])
     @device.study = Study.find(params[:study]['study_id'])
+    @device.activated = params[:device]['activated']
     @device.owner = new_owner
     @device.purchaser = new_purchaser
     @device.carrier = new_carrier
     @device.rate_plan = new_rate_plan
+    @device.model = Model.find params[:model]['model_id']
 
     respond_to do |format|
       if @device.update_attributes(params[:device])
