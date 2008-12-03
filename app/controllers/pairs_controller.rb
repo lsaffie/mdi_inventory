@@ -44,12 +44,11 @@ class PairsController < ApplicationController
     @device = Device.find(params[:device_id])
     @device_2 = Device.find(params[:pair]['device_pair_id'])
     @pair = Pair.new(:device1_id => params[:pair]['device_pair_id'], :device2_id => params[:device_id])
-    
+
     ## Create Ticket ##
-      event = Event.create(:title => 'Pair Created', :body => "Pair created #{Device.find(@pair.device1_id).label_name}
-                   and #{Device.find(@pair.device2_id).label_name}")
-      event2 = Event.create(:title => 'Pair Created', :body => "Pair created #{Device.find(@pair.device1_id).label_name}
-                   and #{Device.find(@pair.device2_id).label_name}")
+      pairs = Device.find(@pair.device1_id).label_name + ", " +Device.find(@pair.device2_id).label_name
+      event = Event.create(:title => 'Pair Created', :body => "Pair created #{pairs}")
+      event2 = Event.create(:title => 'Pair Created', :body => "Pair created #{pairs}")
       @device.events << event
       @device_2.events << event2
     ####
