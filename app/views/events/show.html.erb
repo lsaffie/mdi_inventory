@@ -1,4 +1,8 @@
 <p>
+	<b>Device:</b>
+	<%= Device.find(params[:device]).label_name %>
+</p>
+<p>
   <b>Title:</b>
   <%=h @event.title %>
 </p>

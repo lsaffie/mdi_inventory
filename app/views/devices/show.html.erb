@@ -105,7 +105,7 @@
 <p>
 	<h1>Events</h1>
 	<% for event in @device.events %>
-		<%= link_to event.title, event %>
+		<%= link_to event.title, {:controller => "events", :action => "show", :id => event, :device => @device} %>
 		<%= event.created_at.strftime("%m/%d/%Y") %><br>
 	<% end %>
 </p>
