@@ -41,8 +41,6 @@ class PairsController < ApplicationController
   # POST /pairs
   # POST /pairs.xml
   def create 
-    require 'ruby-debug'
-    debugger
     @device = Device.find(params[:device_id])
     @device_2 = Device.find(params[:pair]['device_pair_id'])
     @pair = Pair.new(:device1_id => params[:pair]['device_pair_id'], :device2_id => params[:device_id])
