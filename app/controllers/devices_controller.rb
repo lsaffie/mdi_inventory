@@ -84,7 +84,7 @@ class DevicesController < ApplicationController
       @device.events << event
     end
     
-    if @device.activated.to_s != params[:device]['activated']
+    if @device.activated != params[:device]['activated']
       event = Event.create(:title => 'activation change', :body => "The activation has changed from #{@device.activated?} to #{params[:device]['activated']}")
       @device.events << event
     end

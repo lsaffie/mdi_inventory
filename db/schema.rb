@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20081119154540) do
+ActiveRecord::Schema.define(:version => 20081203163649) do
 
   create_table "carriers", :force => true do |t|
     t.string   "name"
@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(:version => 20081119154540) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "bluetooth_id"
-    t.boolean  "activated"
+    t.string   "activated"
   end
 
   create_table "devices_events", :force => true do |t|
