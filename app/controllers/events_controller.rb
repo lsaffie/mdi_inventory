@@ -15,6 +15,7 @@ class EventsController < ApplicationController
   # GET /events/1.xml
   def show
     @event = Event.find(params[:id])
+    @device = Device.find(params[:device_id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -36,6 +37,7 @@ class EventsController < ApplicationController
   # GET /events/1/edit
   def edit
     @event = Event.find(params[:id])
+    @device = Device.find(params[:device_id])
   end
 
   # POST /events
@@ -60,12 +62,15 @@ class EventsController < ApplicationController
   # PUT /events/1
   # PUT /events/1.xml
   def update
+    require 'ruby-debug'
+    debugger
     @event = Event.find(params[:id])
+    @device = Device.find(params[:device_id])
 
     respond_to do |format|
       if @event.update_attributes(params[:event])
         flash[:notice] = 'Event was successfully updated.'
-        format.html { redirect_to(@event) }
+        format.html { redirect_to(device_event_path(@device,@event)) }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

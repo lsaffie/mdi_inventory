@@ -1,6 +1,6 @@
 <h1>Editing event</h1>
 
-<% form_for(@event) do |f| %>
+<% form_for(:event, @event, :url => device_event_path(@device,@event), :html => {:method => :put}) do |f| %>
   <%= f.error_messages %>
 
   <p>

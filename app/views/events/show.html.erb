@@ -1,6 +1,6 @@
 <p>
 	<b>Device:</b>
-	<%= Device.find(params[:device]).label_name %>
+	<%= @device.label_name%>
 </p>
 <p>
   <b>Title:</b>
@@ -19,4 +19,4 @@
 
 
 
-<%= link_to 'Edit', edit_event_path(@event) %> 
+<%= link_to 'Edit', edit_device_event_path(@device,@event) %> 
