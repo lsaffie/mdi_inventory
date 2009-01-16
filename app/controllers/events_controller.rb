@@ -62,8 +62,6 @@ class EventsController < ApplicationController
   # PUT /events/1
   # PUT /events/1.xml
   def update
-    require 'ruby-debug'
-    debugger
     @event = Event.find(params[:id])
     @device = Device.find(params[:device_id])
 
